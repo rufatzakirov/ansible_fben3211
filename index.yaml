@@ -1,0 +1,7 @@
+- name: copy context
+  hosts: web
+  tasks:
+  - name: copy
+    template:
+      src: index.j2
+      dest: /usr/share/nginx/html/index.html

@@ -1,0 +1,10 @@
+[web]
+worker01
+worker02
+
+[db]
+worker03
+
+[baku:children]
+web
+db

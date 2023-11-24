@@ -1,0 +1,11 @@
+- name: install packages
+  hosts: all
+  tasks:
+  - name: install package httpd
+    yum:
+      name: nginx
+    when: ansible_os_family == "RedHat" or ansible_memfree_mb > 500
+  - name: install package apache2
+    apt:
+      name: apache2
+    when: ansible_os_family == "Debian"

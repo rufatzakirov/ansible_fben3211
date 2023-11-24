@@ -1,0 +1,11 @@
+- name: create users on web servers
+  hosts: web
+  vars_files: vars_users 
+  tasks:
+  - name: create user
+    user:
+      name: "{{ item.username }}"
+      uid: "{{ item.uid }}"
+      state: present
+    loop: "{{ user }}"
+
