@@ -1,0 +1,7 @@
+- name: Create Users
+  hosts: all
+  vars_files: packages
+  tasks:
+  - name: create user
+    debug:
+      msg: "{{ packages }}"

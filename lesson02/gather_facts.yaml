@@ -1,0 +1,9 @@
+- name: show variable
+  hosts: worker02
+  tasks:
+  - debug:
+      msg: 
+      - ADDRESS = "{{ ansible_default_ipv4.address }}" 
+      - GATEWAY = "{{ ansible_default_ipv4.gateway }}"
+      - MEMFREE = "{{ ansible_memfree_mb }}"
+      - OS = "{{ ansible_os_family }}"

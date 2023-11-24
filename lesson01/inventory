@@ -1,0 +1,15 @@
+worker01
+worker02
+
+[web_servers]
+worker01  package=nano 
+
+
+[db_servers]
+worker02  package=vim
+
+[baku_servers:children]
+web_servers
+db_servers
+
+

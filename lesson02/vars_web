@@ -1,0 +1,6 @@
+http_port: 80
+package: nginx
+service: nginx
+state: present
+firewall_service: http
+service_state: enabled

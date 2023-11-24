@@ -1,0 +1,5 @@
+- name: start useradd role
+  hosts: all
+  roles:
+  - install_nginx
+

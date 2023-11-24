@@ -1,0 +1,14 @@
+- name: Use Lineinfile module
+  hosts: web_servers
+  tasks:
+  - name: Deny Root Login - SSH
+    lineinfile:
+      path: /etc/ssh/sshd_config
+      regexp: "^PasswordAuthentication yes"
+      line: "PasswordAuthentication no"
+    notify: restart sshd service
+  handlers:
+  - name: restart sshd service
+    service:
+      name: sshd
+      state: restarted

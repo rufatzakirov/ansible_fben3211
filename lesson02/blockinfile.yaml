@@ -1,0 +1,14 @@
+- hosts: all
+  tasks:
+  - name: Add mappings to /etc/hosts
+    ansible.builtin.blockinfile:
+      path: /home/ansible/hosts
+      block: |
+    
+          <VirtualHost *:80>
+              DocumentRoot "/www/example1"
+              ServerName www.example.com
+
+              # Other directives here
+          </VirtualHost>
+

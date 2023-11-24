@@ -1,0 +1,13 @@
+- name: install packages
+  gather_facts: no
+  vars:
+    packages:
+    - nano
+    - vim
+    - redis 
+  hosts: all
+  tasks:
+  - name: install 2 package in list
+    yum:
+      name: "{{ packages[1] }}"
+

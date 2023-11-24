@@ -1,0 +1,9 @@
+- name: create users with loop
+  hosts: all
+  tasks:
+  - name: create users
+    user: 
+      name:  "{{ item.username }}"
+      shell: "{{ item.shell }}"
+    loop: "{{ users }}"
+

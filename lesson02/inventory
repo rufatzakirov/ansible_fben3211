@@ -1,0 +1,12 @@
+[web_servers]
+worker01
+worker02
+worker03
+
+[lb_servers]
+control
+
+[baku_servers:children]
+web_servers
+
+

@@ -1,0 +1,24 @@
+- name: install and configure web servers with firewall rules
+  vars_files: vars_web
+  hosts: web_servers
+  tasks:
+  - name: install web package (nginx)
+    yum:
+      name: "{{ package }}"
+      state: "{{ state }}"
+  - name: Open http port on firewalld
+    firewalld:
+      service: "{{ firewall_service }}"
+      state: "{{ service_state }}"
+      permanent: yes
+      immediate: yes
+  - name: Start and enable nginx service
+    service:
+      name: "{{ service }}"
+      state: started
+      enabled: yes
+  - name: Create Home Page
+    template: 
+      src: index.j2
+      dest: /usr/share/nginx/html/index.html
+                                                         

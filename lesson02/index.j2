@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My web page</title>
+    </head>
+    <body>
+        <h1>Welcome to {{ ansible_hostname  }} Server!</h1>
+        <h2>IP ADDRESS : {{ansible_default_ipv4.address }}</h2>
+        <h3>FREE MEMORY : {{ansible_memfree_mb }}MB</h3>
+    </body>
+</html>
+

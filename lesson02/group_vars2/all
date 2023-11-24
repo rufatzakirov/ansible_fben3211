@@ -1,0 +1,8 @@
+users:
+- username: Bob
+  shell: /bin/bash
+- username: Ismayil
+  shell: /bin/bash
+- username: Isa
+  shell: /sbin/nologin
+

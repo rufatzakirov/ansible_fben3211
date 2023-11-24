@@ -1,0 +1,6 @@
+- name: install packages
+  hosts: all
+  tasks:
+  - name: install packages
+    debug:
+      msg: "{{ packages }}"

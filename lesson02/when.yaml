@@ -1,0 +1,13 @@
+- name: install packages with when
+  hosts: all
+  tasks:
+  - name: install apache - RedHat
+    yum:
+      name: 
+      - httpd
+      state: absent
+    when: ansible_os_family == "RedHat" or ansible_memfree_mb > 1000
+  - name: install apache - Debian
+    apt:
+      name: apache2
+    when: ansible_os_family == "Debian" and ansible_memfree_mb < 1000
